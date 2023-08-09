@@ -30,7 +30,7 @@ def senser_get(pass_datatmp):
     pi = pigpio.pi()
     addr = 0x0a
     try:
-        h = pi.i2c_open(1,addr) # ハンドル取得
+        h = pi.i2c_open(1,addr)
         pi.i2c_write_device(h, [0x4d])
         time.sleep(2)
         count, result = pi.i2c_read_device(h,2051)
